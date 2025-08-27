@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
 
-export function Header() {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -115,4 +115,5 @@ export function Header() {
       </div>
     </header>
   );
-}
+};
+export default Header;
