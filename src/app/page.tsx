@@ -1,3 +1,12 @@
+import { Footer } from "@/components/shared/Footer";
+import { Header } from "@/components/shared/Header";
+
 export default function Home() {
-  return <div className="text-5xl">Whereas disregard</div>;
+  return (
+    <main className="min-h-screen">
+      <Header />
+
+      <Footer />
+    </main>
+  );
 }
