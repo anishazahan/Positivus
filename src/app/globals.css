@@ -1,7 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-@import "tailwindcss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   font-family: "Space Grotesk", sans-serif;
+}
+.container {
+  max-width: 1241px;
+  margin: 0 auto;
+}
+
+@layer components {
+  body {
+    @apply bg-slate-50 dark:bg-gray-900;
+  }
+  .container {
+    @apply max-w-[1241px] mx-auto px-5 sm:px-7 xl:px-0;
+  }
+  /* .text-light {
+    @apply text-[#898989];
+  }
+  .text-dark {
+    @apply text-[#191A23];
+  } */
+  /* .text-primary {
+    @apply text-[#B9FF66];
+  } */
+  /* .bg-primary {
+    @apply bg-[#B9FF66];
+  }
+  .bg-light {
+    @apply bg-[#F3F3F3];
+  }
+  .bg-dark {
+    @apply bg-[#191A23];
+  } */
+  .rounded-xl {
+    @apply rounded-[45px];
+  }
 }

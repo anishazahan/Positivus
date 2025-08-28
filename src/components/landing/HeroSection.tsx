@@ -12,7 +12,7 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
                 Navigating the{" "}
                 <span className="text-positivus-green dark:text-primary">
                   digital landscape

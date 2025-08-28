@@ -10,26 +10,18 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted/50 border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <footer className="container rounded-tl-[45px] rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-red p-12">
+      <div className="">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">
-                  P
-                </span>
-              </div>
-              <span className="text-xl font-bold text-foreground">
-                Positivus
-              </span>
-            </Link>
+            <Logo />
             <p className="text-muted-foreground leading-relaxed">
               Navigating the digital landscape for success. We help businesses
               grow and succeed online.

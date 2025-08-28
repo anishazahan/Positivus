@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,23 +33,14 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm"
+          ? "bg-white dark:bg-gray-900 dark:border-b border-gray-500 backdrop-blur-sm  shadow-lg"
           : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-primary-foreground font-bold text-lg">
-                P
-              </span>
-            </div>
-            <span className="text-xl lg:text-2xl font-bold text-foreground">
-              Positivus
-            </span>
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
