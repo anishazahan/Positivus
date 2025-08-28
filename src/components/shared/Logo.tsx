@@ -1,16 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
-import { Sparkle } from "lucide-react";
+import { useTheme } from "next-themes";
+import blackStar from "../../assets/images/black-logo-star.png";
+import whiteStar from "../../assets/images/white-logo-star.png";
+import Image from "next/image";
 
 const Logo = () => {
+  const { theme } = useTheme();
+
   return (
     <Link href="/" className="flex items-center space-x-2 group">
-      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-        <span className="text-primary-foreground font-bold text-lg ">
-          <Sparkle />
-        </span>
-      </div>
-      <span className="text-xl lg:text-2xl font-bold text-foreground">
+      <Image
+        width={35}
+        height={35}
+        src={theme === "dark" ? whiteStar : blackStar}
+        alt="Positivus Logo"
+      />
+      <span className="text-2xl lg:text-3xl font-semibold text-foreground">
         Positivus
       </span>
     </Link>

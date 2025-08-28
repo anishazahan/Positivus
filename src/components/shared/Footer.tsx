@@ -1,130 +1,85 @@
 "use client";
 
-import Link from "next/link";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 import Logo from "./Logo";
+import { navItems } from "@/lib/common.data";
+import HeadingWithBg from "./HeadingWithBg";
+import NewsletterSection from "../ui/Newsletter";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="container rounded-tl-[45px] rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-red p-12">
-      <div className="">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div className="space-y-6">
-            <Logo />
-            <p className="text-muted-foreground leading-relaxed">
-              Navigating the digital landscape for success. We help businesses
-              grow and succeed online.
+    <footer className="container rounded-tl-[45px] rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-gray-950 shadow-lg p-12">
+      <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
+        <Logo />
+        {/* //sections */}
+        <div className="flex flex-col md:flex-row items-center mt-8 lg:mt-0 gap-4 lg:gap-7">
+          {navItems?.map((item) => (
+            <p
+              id={item?.href}
+              key={item?.href}
+              className="text-dark dark:text-light hover:text-lime-600 dark:hover:text-primary transition-colors duration-200 text-lg underline hover:cursor-pointer"
+            >
+              {item?.label}
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-                <button
-                  key={index}
-                  className="w-9 h-9 flex items-center justify-center rounded-full 
-                             bg-transparent text-muted-foreground 
-                             hover:bg-primary hover:text-primary-foreground 
-                             transition-all duration-200 hover:scale-110"
-                >
-                  <Icon className="w-4 h-4" />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Quick Links
-            </h3>
-            <nav className="space-y-3">
-              {["About us", "Services", "Use Cases", "Pricing", "Blog"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className="block text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >
-                    {item}
-                  </Link>
-                )
-              )}
-            </nav>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-foreground">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>hello@positivus.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>123 Digital Street, Tech City</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Newsletter
-            </h3>
-            <p className="text-muted-foreground">
-              Subscribe to our newsletter for the latest updates and insights.
-            </p>
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 rounded-md border border-border 
-                           bg-background text-foreground placeholder:text-muted-foreground
-                           focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-              />
-              <button
-                className="w-full px-4 py-2 rounded-md bg-primary text-primary-foreground 
-                           font-medium hover:bg-primary/90 transition-colors shadow-md"
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Positivus. All rights reserved.
+        <div className="lg:flex space-x-4 hidden">
+          {[Linkedin, Facebook, Twitter].map((Icon, index) => (
+            <button
+              key={index}
+              className="w-9 h-9 flex items-center justify-center rounded-full
+                           bg-transparent text-dark border border-primary
+                           hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
+                           transition-all duration-200 hover:scale-110 bg-light"
+            >
+              <Icon className="w-4 h-4" />
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between mt-12 lg:mt-16 pb-6 border-b border-gray-500 ">
+        <div className="space-y-6 text-center lg:text-left">
+          <div className="inline-block">
+            <HeadingWithBg className="text-xl" title="Contact us:" />
+          </div>
+          <p className=" md:text-lg text-dark dark:text-light">
+            Email: info@positivus.com
           </p>
-          <div className="flex space-x-6 text-sm">
-            <Link
-              href="/privacy"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Terms of Service
-            </Link>
+          <p className=" md:text-lg text-dark dark:text-light">
+            Phone: 555-567-8901
+          </p>
+          <div className="">
+            Address: 1234 Main St <br /> Moonstone City, Stardust State 12345
           </div>
         </div>
+
+        <div className="my-6 lg:my-0 mx-auto lg:mx-0 lg:ml-auto">
+          <div className="bg-gray-200 inline-block mx-auto dark:bg-[#292A32]  p-8 rounded-xl">
+            <NewsletterSection />
+          </div>
+        </div>
+
+        <div className="flex gap-4 justify-center lg:hidden">
+          {[Linkedin, Facebook, Twitter].map((Icon, index) => (
+            <button
+              key={index}
+              className="w-9 h-9 flex items-center justify-center rounded-full
+                           bg-transparent text-dark border border-primary
+                           hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
+                           transition-all duration-200 hover:scale-110 bg-light"
+            >
+              <Icon className="w-4 h-4" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-5 mt-8">
+        <p>© 2023 Positivus. All Rights Reserved.</p>
+        <p>Privacy Policy</p>
       </div>
     </footer>
   );

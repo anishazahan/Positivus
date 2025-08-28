@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
+import { navItems } from "@/lib/common.data";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,14 +20,6 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navItems = [
-    { href: "#about", label: "About us" },
-    { href: "#services", label: "Services" },
-    { href: "#cases", label: "Use Cases" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#blog", label: "Blog" },
-  ];
 
   return (
     <header
@@ -44,13 +37,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems?.map((item) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={item?.href}
+                href={item?.href}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
-                {item.label}
+                {item?.label}
               </Link>
             ))}
           </nav>
