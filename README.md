@@ -2,6 +2,8 @@
 
 A modern, responsive digital marketing agency website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design with bright green accents, dark/light mode support, and smooth animations.
 
+**🌐 Live Demo:** [https://positivus-anihsha.netlify.app/](https://positivus-anihsha.netlify.app/)
+
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional layout with Positivus brand colors
@@ -22,8 +24,13 @@ A modern, responsive digital marketing agency website built with Next.js, TypeSc
 - **Theme**: next-themes for dark/light mode
 - **Animations**: Framer motion
 
+### 1. Clone the repository
+
+git clone <your-repo-url>
+-cd positivus
+
 2. **Install dependencies**
-   \`\`\`bash
+
    npm install
 
    # or
@@ -33,42 +40,25 @@ A modern, responsive digital marketing agency website built with Next.js, TypeSc
    # or
 
    pnpm install
-   \`\`\`
 
-3. **Run the development server**
-   \`\`\`bash
-   npm run dev
-
-   # or
-
-   yarn dev
-
-   # or
-
-   pnpm dev
-   \`\`\`
-
-4. **Open your browser**
+3. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🏗 Project Structure
 
-\`\`\`
 ├── app/
 │ ├── globals.css # Global styles and design tokens
 │ ├── layout.tsx # Root layout with metadata
 │ └── page.tsx # Home page
 ├── components/
-│ ├── ui/ # custom ui components
+│ ├── ui/ # Custom UI components
 │ ├── header.tsx # Navigation header
-│ ├── Her.tsx # Hero section with CTA
+│ ├── Hero.tsx # Hero section with CTA
 │ ├── CompanyLogos.tsx # Trusted companies section
 │ ├── theme-toggle.tsx # Dark/light mode toggle
 │ └── theme-provider.tsx # Theme context provider
 ├── lib/
 │ └── utils.ts # Utility functions
-
-\`\`\`
 
 ## 🎨 Design System
 
