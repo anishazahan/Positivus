@@ -14,7 +14,7 @@ const WorkProcess = () => {
   };
 
   return (
-    <div className="my-24 lg:my-36 container">
+    <div className="mt-20 lg:mt-28 container">
       <SectionHeading
         title={"Our Working Process "}
         description1={"Step-by-Step Guide to Achieving  "}

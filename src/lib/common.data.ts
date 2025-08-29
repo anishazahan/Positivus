@@ -1,10 +1,13 @@
-import { AccordionItem, Service, Testimonial } from "@/types/common.type";
+import { AccordionItem, Service, TeamMember, Testimonial } from "@/types/common.type";
 import serviceImg1 from "../assets/images/services-img/services-1.png"
 import serviceImg2 from "../assets/images/services-img/services-2.png"
 import serviceImg3 from "../assets/images/services-img/services-3.png"
 import serviceImg4 from "../assets/images/services-img/services-4.png"
 import serviceImg5 from "../assets/images/services-img/services-5.png"
 import serviceImg6 from "../assets/images/services-img/services-6.png"
+import team1 from "../assets/images/teams/team-1.png"
+import team2 from "../assets/images/teams/team-3.png"
+import team3 from "../assets/images/teams/Picture.png"
 
 export  const navItems = [
     { href: "#about", label: "About us" },
@@ -169,3 +172,82 @@ export const services: Service[] = [
      img:serviceImg6
   }
 ];
+
+
+
+
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: 1,
+    name: "John Smith",
+    title: "CEO and Founder",
+    experience: "10+ years of experience in digital marketing",
+    description: "Expertise in SEO, PPC, and content strategy",
+    avatar: team1,
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+    title: "Director of Operations",
+    experience: "7+ years of experience in project management and team leadership",
+    description: "Strong organizational and communication skills",
+    avatar: team2,
+  },
+  {
+    id: 3,
+    name: "Michael Brown",
+    title: "Senior SEO Specialist",
+    experience: "5+ years of experience in SEO and content creation",
+    description: "Proficient in keyword research and on-page optimization",
+    avatar: team3,
+  },
+  {
+    id: 4,
+    name: "Emily Johnson",
+    title: "PPC Manager",
+    experience: "3+ years of experience in paid search advertising",
+    description: "Skilled in campaign management and performance analysis",
+    avatar: team1,
+  },
+  {
+    id: 5,
+    name: "Brian Williams",
+    title: "Social Media Specialist",
+    experience: "4+ years of experience in social media marketing",
+    description: "Proficient in creating and scheduling content, analyzing metrics, and building engagement",
+    avatar: team2,
+  },
+  {
+    id: 6,
+    name: "Sarah Kim",
+    title: "Content Creator",
+    experience: "2+ years of experience in writing and editing",
+    description: "Skilled in creating compelling, SEO-optimized content for various industries",
+    avatar: team3,
+  },
+   {
+    id: 7,
+    name: "Jane Doe",
+    title: "Director of Operations",
+    experience: "7+ years of experience in project management and team leadership",
+    description: "Strong organizational and communication skills",
+    avatar: team2,
+  },
+  {
+    id: 8,
+    name: "Michael Brown",
+    title: "Senior SEO Specialist",
+    experience: "5+ years of experience in SEO and content creation",
+    description: "Proficient in keyword research and on-page optimization",
+    avatar: team3,
+  },
+  {
+    id: 9,
+    name: "Emily Johnson",
+    title: "PPC Manager",
+    experience: "3+ years of experience in paid search advertising",
+    description: "Skilled in campaign management and performance analysis",
+    avatar: team1,
+  },
+]

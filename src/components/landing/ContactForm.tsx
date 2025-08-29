@@ -72,7 +72,7 @@ const ContactForm = () => {
           description2={"Digital Marketing Needs"}
         />
       </div>
-      <div className="container mx-auto pl-4 py-8 lg:py-14 bg-light dark:bg-gray-950 transition-colors duration-300 rounded-[45px] my-10 lg:my-16 ">
+      <div className="container mx-auto pl-4 py-8 lg:py-14 bg-light dark:bg-gray-800 dark:border border-gray-700 shadow transition-colors duration-300 rounded-[45px] my-10 lg:my-16 ">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between gap-8 items-center">
             {/* Form Section */}

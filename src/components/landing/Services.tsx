@@ -123,6 +123,7 @@ const Services = () => {
               {/* Service Img */}
               <div className="flex justify-end ">
                 <Image
+                  priority
                   width={210}
                   height={210}
                   src={service?.img || "/images/service.png"}

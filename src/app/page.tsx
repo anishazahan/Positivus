@@ -2,6 +2,7 @@ import ContactForm from "@/components/landing/ContactForm";
 import HeroSection from "@/components/landing/HeroSection";
 import Services from "@/components/landing/Services";
 import ServicesSection from "@/components/landing/ServicesSection";
+import TeamGrid from "@/components/landing/Teams";
 import TestimonialSlider from "@/components/landing/TestimonialSlider";
 import WorkProcess from "@/components/landing/WorkProcess";
 
@@ -16,6 +17,7 @@ export default function Home() {
       {/* <HeroSection /> */}
       <Services />
       <WorkProcess />
+      <TeamGrid />
       <TestimonialSlider />
       <div className="my-16 lg:my-0">
         <ContactForm />

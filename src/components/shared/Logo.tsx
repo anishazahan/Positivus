@@ -13,6 +13,7 @@ const Logo = () => {
   return (
     <Link href="/" className="flex items-center space-x-2 group">
       <Image
+        priority
         width={35}
         height={35}
         src={theme === "dark" ? whiteStar : blackStar}

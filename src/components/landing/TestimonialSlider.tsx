@@ -52,7 +52,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="my-24 lg:my-36 container">
+    <div className="mb-24 lg:mb-36 container">
       <SectionHeading
         title={"Testimonials"}
         description1={"Hear from Our Satisfied Clients: Read Our Testimonials "}

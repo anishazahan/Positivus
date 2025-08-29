@@ -27,3 +27,13 @@ export interface Service {
   description: string;
   img: string | StaticImageData;
 }
+
+
+export interface TeamMember {
+  id: number
+  name: string
+  title: string
+  experience: string
+  description: string
+  avatar: string | StaticImageData;
+}
