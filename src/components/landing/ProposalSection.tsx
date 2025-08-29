@@ -28,7 +28,7 @@ const ProposalSection = () => {
             }}
           >
             <h1 className="text-2xl lg:text-3xl font-bold text-dark dark:text-light leading-tight">
-              Let's make things{" "}
+              Lets make things{" "}
               <span className="relative">
                 <span className="bg-gradient-to-r from-lime-500 to-lime-600 bg-clip-text text-transparent animate-pulse">
                   happen

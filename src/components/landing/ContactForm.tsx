@@ -5,7 +5,6 @@ import { Send, CheckCircle2 } from "lucide-react";
 import SectionHeading from "../shared/SectionHeading";
 import ContactDecorativeSection from "./ContactDecorativeSection";
 import InputField from "../ui/InputField";
-import { CONTACT_US } from "@/lib/path-name.route";
 import Link from "next/link";
 
 type FormData = {

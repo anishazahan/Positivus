@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { testimonials } from "@/lib/common.data";
 import SectionHeading from "../shared/SectionHeading";
@@ -9,25 +9,28 @@ const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [isAnimating]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
-  };
+  }, [isAnimating]);
 
-  const goToSlide = (index: number) => {
-    if (isAnimating || index === currentIndex) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-  };
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (isAnimating || index === currentIndex) return;
+      setIsAnimating(true);
+      setCurrentIndex(index);
+    },
+    [isAnimating, currentIndex]
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => setIsAnimating(false), 500);
@@ -39,7 +42,7 @@ const TestimonialSlider = () => {
       nextSlide();
     }, 5000);
     return () => clearInterval(autoSlide);
-  }, [currentIndex, nextSlide]);
+  }, [nextSlide]);
 
   const getVisibleTestimonials = () => {
     const visible = [];

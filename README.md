@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Positivus - Digital Marketing Agency Website
 
-## Getting Started
+A modern, responsive digital marketing agency website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design with bright green accents, dark/light mode support, and smooth animations.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern Design**: Clean, professional layout with Positivus brand colors
+- **Responsive**: Mobile-first design that works on all devices
+- **Dark/Light Mode**: Theme toggle with smooth transitions
+- **Animations**: Subtle hover effects and loading animations
+- **SEO Optimized**: Proper meta tags, semantic HTML, and accessibility features
+- **TypeScript**: Full type safety throughout the application
+- **Performance**: Optimized images and efficient code splitting
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Fonts**: Geist Sans & Geist Mono
+- **Theme**: next-themes for dark/light mode
+- **Animations**: Framer motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install dependencies**
+   \`\`\`bash
+   npm install
 
-## Learn More
+   # or
 
-To learn more about Next.js, take a look at the following resources:
+   yarn install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   # or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   pnpm install
+   \`\`\`
 
-## Deploy on Vercel
+3. **Run the development server**
+   \`\`\`bash
+   npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # or
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   yarn dev
+
+   # or
+
+   pnpm dev
+   \`\`\`
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🏗 Project Structure
+
+\`\`\`
+├── app/
+│ ├── globals.css # Global styles and design tokens
+│ ├── layout.tsx # Root layout with metadata
+│ └── page.tsx # Home page
+├── components/
+│ ├── ui/ # custom ui components
+│ ├── header.tsx # Navigation header
+│ ├── Her.tsx # Hero section with CTA
+│ ├── CompanyLogos.tsx # Trusted companies section
+│ ├── theme-toggle.tsx # Dark/light mode toggle
+│ └── theme-provider.tsx # Theme context provider
+├── lib/
+│ └── utils.ts # Utility functions
+
+\`\`\`
+
+## 🎨 Design System
+
+### Colors
+
+- **Primary**: #F3F3F3 (Bright Green)
+- **Secondary**: #00C853 (Accent Green)
+- **Dark**: #191A23
+- **Light**: #F3F3F3
+
+### Typography
+
+- **Headings**: Geist Sans (Bold weights)
+- **Body**: Geist Sans (Regular/Medium)
+- **Code**: Geist Mono
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## ♿ Accessibility Features
+
+- Semantic HTML structure
+- ARIA labels and roles
+- Keyboard navigation support
+- Screen reader friendly
+- High contrast ratios (WCAG AA compliant)
+- Focus indicators
+
+---
+
+Built with ❤️ by the Anisha zahan
