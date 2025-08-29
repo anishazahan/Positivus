@@ -1,4 +1,4 @@
-import { Testimonial } from "@/types/common.type";
+import { AccordionItem, Testimonial } from "@/types/common.type";
 
 export  const navItems = [
     { href: "#about", label: "About us" },
@@ -45,5 +45,44 @@ export const testimonials: Testimonial[] = [
     author: "David Wilson",
     position: "Founder",
     company: "Startup Hub",
+  },
+];
+
+export const accordionData: AccordionItem[] = [
+  {
+    id: 1,
+    title: "Consultation",
+    content:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    id: 2,
+    title: "Research and Strategy Development",
+    content:
+      "We conduct comprehensive market research and competitor analysis to develop a customized strategy that aligns with your business objectives and target audience preferences.",
+  },
+  {
+    id: 3,
+    title: "Implementation",
+    content:
+      "Our team executes the developed strategy with precision, implementing all planned marketing campaigns, content creation, and optimization techniques across relevant channels.",
+  },
+  {
+    id: 4,
+    title: "Monitoring and Optimization",
+    content:
+      "We continuously monitor campaign performance using advanced analytics tools and make real-time adjustments to maximize ROI and achieve optimal results.",
+  },
+  {
+    id: 5,
+    title: "Reporting and Communication",
+    content:
+      "Regular detailed reports keep you informed about campaign progress, key metrics, and insights. We maintain transparent communication throughout the entire process.",
+  },
+  {
+    id: 6,
+    title: "Continual Improvement",
+    content:
+      "Based on performance data and market changes, we continuously refine and improve strategies to ensure long-term success and sustainable growth for your business.",
   },
 ];

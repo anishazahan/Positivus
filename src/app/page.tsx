@@ -2,6 +2,7 @@ import ContactForm from "@/components/landing/ContactForm";
 import HeroSection from "@/components/landing/HeroSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import TestimonialSlider from "@/components/landing/TestimonialSlider";
+import WorkProcess from "@/components/landing/WorkProcess";
 
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50/10 dark:bg-gray-900">
       <Header />
       {/* <HeroSection /> */}
+      <WorkProcess />
       <TestimonialSlider />
       <div className="my-16 lg:my-0">
         <ContactForm />

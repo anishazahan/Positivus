@@ -5,3 +5,9 @@ export interface Testimonial {
   position: string;
   company: string;
 }
+
+export interface AccordionItem {
+  id: number;
+  title: string;
+  content: string;
+}

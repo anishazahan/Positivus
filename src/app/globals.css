@@ -4,11 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  font-family: "Space Grotesk", sans-serif;
-}
-.container {
-  max-width: 1241px;
-  margin: 0 auto;
+  font-family: "Space Grotesk", sans-serif !important;
 }
 
 @layer components {
