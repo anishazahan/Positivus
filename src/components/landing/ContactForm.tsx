@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
 import SectionHeading from "../shared/SectionHeading";
 import ContactDecorativeSection from "./ContactDecorativeSection";
+import InputField from "../ui/InputField";
 
 type FormData = {
   type: "sayHi" | "getQuote";
@@ -21,6 +22,7 @@ const ContactForm = () => {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,15 +31,14 @@ const ContactForm = () => {
     if (!formData?.email?.trim()) newErrors.email = "Email is required";
     if (!formData?.message?.trim()) newErrors.message = "Message is required";
 
-    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+    if (formData?.email && !/\S+@\S+\.\S+/.test(formData?.email)) {
       newErrors.email = "Please enter a valid email";
     }
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
-      alert("Message sent successfully!");
+      setShowModal(true);
     }
   };
 
@@ -50,6 +51,16 @@ const ContactForm = () => {
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    setFormData({
+      type: "sayHi",
+      name: "",
+      email: "",
+      message: "",
+    }); // Reset form
   };
 
   return (
@@ -125,80 +136,34 @@ const ContactForm = () => {
                     </label>
                   </div>
 
-                  {/* Name Field */}
-                  <div className="space-y-2 pt-4">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-dark dark:text-light"
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Name"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-light focus:ring-[1px] focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200"
-                    />
-                  </div>
+                  <InputField
+                    label="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name"
+                  />
 
-                  {/* Email Field */}
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-dark dark:text-light"
-                    >
-                      Email*
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email"
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.email
-                          ? "border-red-500 focus:ring-red-500"
-                          : "border-gray-300 dark:border-gray-600 focus:ring-primary"
-                      } bg-white dark:bg-transparent text-dark dark:text-gray-100 placeholder-gray-400 dark:placeholder-light focus:ring-[1px] focus:border-transparent outline-none transition-all duration-200`}
-                    />
-                    {errors.email && (
-                      <p className="text-sm text-red-600 dark:text-red-400">
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
+                  <InputField
+                    label="Email*"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    error={errors.email}
+                  />
 
-                  {/* Message Field */}
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-dark dark:text-light"
-                    >
-                      Message*
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Message"
-                      rows={5}
-                      className={`w-full px-4 py-3 rounded-lg border resize-none ${
-                        errors.message
-                          ? "border-red-500 focus:ring-red-500"
-                          : "border-gray-300 dark:border-gray-600 focus:ring-primary"
-                      } bg-white dark:bg-transparent text-dark dark:text-gray-100 placeholder-gray-400 dark:placeholder-light focus:ring-[1px] focus:border-transparent outline-none transition-all duration-200`}
-                    />
-                    {errors.message && (
-                      <p className="text-sm text-red-600 dark:text-red-400">
-                        {errors.message}
-                      </p>
-                    )}
-                  </div>
+                  <InputField
+                    label="Message*"
+                    name="message"
+                    type="textarea"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Message"
+                    rows={5}
+                    error={errors.message}
+                  />
 
                   {/* Submit Button */}
                   <button
@@ -217,6 +182,27 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 max-w-sm text-center">
+            <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+            <h2 className="text-xl font-semibold text-dark dark:text-light mb-2">
+              Message Sent Successfully!
+            </h2>
+            <p className="text-dark dark:text-gray-400 mb-6">
+              Thank you for reaching out. We’ll get back to you shortly.
+            </p>
+            <button
+              onClick={handleModalClose}
+              className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
