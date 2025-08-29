@@ -6,15 +6,33 @@ import { navItems } from "@/lib/common.data";
 import HeadingWithBg from "./HeadingWithBg";
 import NewsletterSection from "../ui/Newsletter";
 import { getCurrentYear } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  // Animation variants
+  const logoVariant = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
+  const socialVariant = {
+    hidden: { y: -50, opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, delay: i * 0.2 },
+    }),
+  };
 
   return (
     <footer className="container lg:rounded-tl-[45px] lg:rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-gray-950 shadow-lg p-12">
       <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
-        <Logo />
-        {/* //sections */}
+        {/* Logo with slide-in from left */}
+        <motion.div variants={logoVariant} initial="hidden" animate="visible">
+          <Logo />
+        </motion.div>
+
+        {/* Navigation */}
         <div className="flex flex-col md:flex-row items-center mt-8 lg:mt-0 gap-4 lg:gap-7">
           {navItems?.map((item) => (
             <p
@@ -27,21 +45,29 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Social Icons - Desktop */}
         <div className="lg:flex space-x-4 hidden">
           {[Linkedin, Facebook, Twitter].map((Icon, index) => (
-            <button
+            <motion.button
               key={index}
+              custom={index}
+              variants={socialVariant}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.2 }}
               className="w-9 h-9 flex items-center justify-center rounded-full
-                           bg-transparent text-dark border border-primary
-                           hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
-                           transition-all duration-200 hover:scale-110 bg-light"
+                         bg-transparent text-dark border border-primary
+                         hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
+                         transition-all duration-200 bg-light"
             >
               <Icon className="w-4 h-4" />
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between mt-12 lg:mt-16 pb-6 border-b border-gray-500 ">
+
+      {/* Contact + Newsletter */}
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between mt-12 lg:mt-16 pb-6 border-b border-gray-500">
         <div className="space-y-6 text-center lg:text-left">
           <div className="inline-block">
             <HeadingWithBg className="text-xl" title="Contact us:" />
@@ -63,17 +89,23 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Social Icons - Mobile */}
         <div className="flex gap-4 justify-center lg:hidden">
           {[Linkedin, Facebook, Twitter].map((Icon, index) => (
-            <button
+            <motion.button
               key={index}
+              custom={index}
+              variants={socialVariant}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.2 }}
               className="w-9 h-9 flex items-center justify-center rounded-full
-                           bg-transparent text-dark border border-primary
-                           hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
-                           transition-all duration-200 hover:scale-110 bg-light"
+                         bg-transparent text-dark border border-primary
+                         hover:bg-primary p-2 dark:bg-primary hover:text-primary-foreground
+                         transition-all duration-200 bg-light"
             >
               <Icon className="w-4 h-4" />
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>

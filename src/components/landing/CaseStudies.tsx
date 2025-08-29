@@ -5,6 +5,16 @@ import { ArrowRight } from "lucide-react";
 import { caseStudies } from "@/lib/common.data";
 import { Dialog } from "../ui/Dialog";
 import SectionHeading from "../shared/SectionHeading";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  offscreen: { y: 50, opacity: 0 },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const CaseStudiesSection = () => {
   const [open, setOpen] = useState(false);
@@ -15,19 +25,23 @@ const CaseStudiesSection = () => {
   return (
     <div className="container mt-28 lg:mt-40">
       <SectionHeading
-        title={"Case Studies"}
-        description1={
-          "Explore Real-Life Examples of Our Proven Digital Marketing  "
-        }
-        description2={" Success through Our Case Studies"}
+        title="Case Studies"
+        description1="Explore Real-Life Examples of Our Proven Digital Marketing"
+        description2="Success through Our Case Studies"
       />
 
-      <div className="mt-12  container bg-dark dark:border border-gray-700 p-10 py-16 dark:bg-gray-800 rounded-[45px]">
+      <div className="mt-12 container bg-dark dark:border border-gray-700 p-10 py-16 dark:bg-gray-800 rounded-[45px]">
         <div className="grid md:grid-cols-3 gap-8">
           {caseStudies.map((study) => (
-            <div
+            <motion.div
               key={study.id}
-              className="space-y-4 group cursor-pointer transition-all duration-300 hover:scale-105"
+              className="space-y-4 group cursor-pointer"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <p className="text-slate-300 leading-relaxed group-hover:text-white transition-colors duration-200">
                 {study.description}
@@ -43,7 +57,7 @@ const CaseStudiesSection = () => {
                 Learn more
                 <ArrowRight className="w-4 h-4 -rotate-45 transition-transform duration-200 group-hover:translate-x-1" />
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -57,7 +71,7 @@ const CaseStudiesSection = () => {
 
             {selectedCase?.metrics && (
               <div className="grid grid-cols-3 gap-4 divide-x">
-                {Object.entries(selectedCase?.metrics)?.map(([key, value]) => (
+                {Object.entries(selectedCase.metrics).map(([key, value]) => (
                   <div
                     key={key}
                     className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg"

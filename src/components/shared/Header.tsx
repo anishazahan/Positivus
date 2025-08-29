@@ -8,7 +8,6 @@ import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
 import { navItems } from "@/lib/common.data";
-import { CONTACT_US } from "@/lib/path-name.route";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,7 +55,7 @@ const Header = () => {
               <ThemeToggle />
               <Button
                 variant="outline"
-                className=" text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105"
+                className=" text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105 dark:text-white"
               >
                 <Link href="#contact">Request a quote</Link>
               </Button>

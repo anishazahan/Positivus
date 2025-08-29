@@ -19,11 +19,9 @@ const LogoMarquee = () => {
   const duplicatedLogos = [...logoData, ...logoData];
 
   return (
-    <div
-      className={`container flex flex-col items-center justify-center transition-colors duration-300 mt-28`}
-    >
-      {/* Logo marquee container */}
-      <div className="w-full overflow-hidden py-8 relative">
+    <div className="container flex flex-col items-center justify-center transition-colors duration-300 mt-14">
+      {/* Large devices: single row */}
+      <div className="hidden lg:block w-full overflow-hidden py-8 relative">
         <div className="animate-marquee whitespace-nowrap">
           {duplicatedLogos.map((logo) => (
             <div
@@ -41,6 +39,51 @@ const LogoMarquee = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Small devices: two rows */}
+      <div className="lg:hidden w-full space-y-4">
+        {/* Top row: left to right */}
+        <div className="overflow-hidden relative">
+          <div className="animate-marquee whitespace-nowrap">
+            {duplicatedLogos.map((logo) => (
+              <div
+                key={`top-${logo.id}-${Math.random()}`}
+                className="inline-block mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
+              >
+                <div className="w-28 h-14 relative">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain grayscale dark:grayscale-0"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom row: right to left */}
+        <div className="overflow-hidden relative">
+          <div className="animate-marquee-reverse whitespace-nowrap">
+            {duplicatedLogos.map((logo) => (
+              <div
+                key={`bottom-${logo.id}-${Math.random()}`}
+                className="inline-block mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
+              >
+                <div className="w-28 h-14 relative">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain grayscale dark:grayscale-0"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
