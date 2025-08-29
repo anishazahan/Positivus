@@ -1,4 +1,4 @@
-import { AccordionItem, Service, TeamMember, Testimonial } from "@/types/common.type";
+import { AccordionItem, CaseStudies, Service, TeamMember, Testimonial } from "@/types/common.type";
 import serviceImg1 from "../assets/images/services-img/services-1.png"
 import serviceImg2 from "../assets/images/services-img/services-2.png"
 import serviceImg3 from "../assets/images/services-img/services-3.png"
@@ -252,3 +252,41 @@ export const teamMembers: TeamMember[] = [
     avatar: team1,
   },
 ]
+
+
+
+export const caseStudies:CaseStudies[] = [
+  {
+    id: 1,
+    title: "Local Restaurant Success",
+    description: "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
+    details: "Our comprehensive digital marketing strategy included Google Ads optimization, local SEO improvements, social media marketing, and conversion rate optimization. We identified peak dining hours and targeted local customers with compelling offers during slow periods.",
+    metrics: {
+      trafficIncrease: "50%",
+      salesIncrease: "25%",
+      roiImprovement: "180%"
+    }
+  },
+  {
+    id: 2,
+    title: "B2B Software Growth",
+    description: "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
+    details: "We conducted comprehensive keyword research, optimized technical SEO, created high-quality content marketing campaigns, and built authoritative backlinks. The strategy focused on long-tail keywords with high conversion potential.",
+    metrics: {
+      organicTraffic: "200%",
+      keywordRankings: "85%",
+      leadGeneration: "150%"
+    }
+  },
+  {
+    id: 3,
+    title: "E-commerce Expansion",
+    description: "For a national retail chain, we created a social media marketing campaign that increased followers by 65% and generated a 20% increase in online sales.",
+    details: "Our omnichannel approach included Instagram and Facebook advertising, influencer partnerships, user-generated content campaigns, and retargeting strategies. We focused on visual storytelling and community building.",
+    metrics: {
+      followersGrowth: "65%",
+      onlineSales: "20%",
+      engagement: "240%"
+    }
+  }
+];

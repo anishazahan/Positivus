@@ -37,3 +37,15 @@ export interface TeamMember {
   description: string
   avatar: string | StaticImageData;
 }
+
+export interface CaseStudies {
+    id: number
+    title: string
+    description: string
+    metrics: {
+      organicTraffic:string
+      keywordRankings: string
+      leadGeneration:  string
+    }
+    details:string | null
+}

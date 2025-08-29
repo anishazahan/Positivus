@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import companyLogo1 from "../../assets/images/company-logo/amazon.png";
 import companyLogo2 from "../../assets/images/company-logo/dribble.png";
@@ -9,7 +6,6 @@ import companyLogo4 from "../../assets/images/company-logo/netflix.png";
 import companyLogo5 from "../../assets/images/company-logo/notion.png";
 import companyLogo6 from "../../assets/images/company-logo/zomm.png";
 
-// Demo data with placeholder image paths
 const logoData = [
   { id: 1, src: companyLogo1, alt: "Amazon" },
   { id: 2, src: companyLogo2, alt: "Dribble" },
@@ -20,20 +16,6 @@ const logoData = [
 ];
 
 const LogoMarquee = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Check system preference or stored preference
-    if (typeof window !== "undefined") {
-      const isDark =
-        localStorage.getItem("darkMode") === "true" ||
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setDarkMode(isDark);
-      document.documentElement.classList.toggle("dark", isDark);
-    }
-  }, []);
-
-  // Duplicate the logos for seamless looping
   const duplicatedLogos = [...logoData, ...logoData];
 
   return (
