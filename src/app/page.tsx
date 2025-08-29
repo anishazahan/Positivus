@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50/10 dark:bg-gray-900">
       <Header />
-      {/* <HeroSection /> */}
+      <HeroSection />
       <LogoMarquee />
       <Services />
       <ProposalSection />
