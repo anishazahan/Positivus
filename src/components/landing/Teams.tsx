@@ -7,7 +7,7 @@ import SectionHeading from "../shared/SectionHeading";
 import { Button } from "../ui/Button";
 import Image from "next/image";
 
-const TeamGrid = () => {
+const Teams = () => {
   const [showAll, setShowAll] = useState(false);
 
   // Slice data based on toggle
@@ -91,4 +91,4 @@ const TeamGrid = () => {
   );
 };
 
-export default TeamGrid;
+export default Teams;

@@ -9,6 +9,7 @@ import team1 from "../assets/images/teams/team-1.png"
 import team2 from "../assets/images/teams/team-3.png"
 import team3 from "../assets/images/teams/Picture.png"
 
+
 export  const navItems = [
     { href: "#about", label: "About us" },
     { href: "#services", label: "Services" },
