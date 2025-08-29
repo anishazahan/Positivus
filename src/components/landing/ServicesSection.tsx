@@ -77,7 +77,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section
+    <div
       id="services"
       className="py-16 lg:py-24 bg-background transition-colors duration-300"
     >
@@ -134,7 +134,7 @@ const ServicesSection = () => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

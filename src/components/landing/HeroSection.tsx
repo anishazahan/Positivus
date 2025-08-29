@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="pt-20 lg:pt-44 bg-background transition-colors duration-300">
+    <div className="pt-20 lg:pt-44 bg-background transition-colors duration-300">
       <div className="container">
         <h1 className="pt-10 lg:pt-0 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance  lg:hidden">
           Navigating the{" "}
@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

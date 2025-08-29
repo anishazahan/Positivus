@@ -7,6 +7,10 @@ body {
   font-family: "Space Grotesk", sans-serif !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   body {
     @apply bg-gray-50/10 dark:bg-gray-900;
@@ -14,24 +18,7 @@ body {
   .container {
     @apply max-w-[1241px] mx-auto px-5 sm:px-7 xl:px-0;
   }
-  /* .text-light {
-    @apply text-[#898989];
-  }
-  .text-dark {
-    @apply text-[#191A23];
-  } */
-  /* .text-primary {
-    @apply text-[#B9FF66];
-  } */
-  /* .bg-primary {
-    @apply bg-[#B9FF66];
-  }
-  .bg-light {
-    @apply bg-[#F3F3F3];
-  }
-  .bg-dark {
-    @apply bg-[#191A23];
-  } */
+
   .rounded-xl {
     @apply rounded-[45px];
   }

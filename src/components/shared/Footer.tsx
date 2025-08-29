@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import { navItems } from "@/lib/common.data";
 import HeadingWithBg from "./HeadingWithBg";
 import NewsletterSection from "../ui/Newsletter";
+import { getCurrentYear } from "@/lib/utils";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -78,7 +79,7 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-5 mt-8">
-        <p>© 2023 Positivus. All Rights Reserved.</p>
+        <p>© {getCurrentYear()} Positivus. All Rights Reserved.</p>
         <p>Privacy Policy</p>
       </div>
     </footer>
