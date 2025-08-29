@@ -10,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="container rounded-tl-[45px] rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-gray-950 shadow-lg p-12">
+    <footer className="container lg:rounded-tl-[45px] lg:rounded-tr-[45px] mx-auto mt-12 lg:mt-20 bg-[#F3F3F3] dark:bg-gray-950 shadow-lg p-12">
       <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
         <Logo />
         {/* //sections */}

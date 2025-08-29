@@ -16,7 +16,6 @@ module.exports = {
         // border: "#e5e7eb",
         // muted: "#f5f5f5",
         // "muted-foreground": "#6b7280",
-        red: "#ef4444",
         primary: "#B9FF66",
         // "primary-foreground": "#ffffff",
         "positivus-green": "#00C853",
