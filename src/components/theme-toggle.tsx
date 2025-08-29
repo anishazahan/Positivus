@@ -16,7 +16,7 @@ export function ThemeToggle() {
     return (
       <button
         disabled
-        className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors"
+        className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800  dark:text-gray-200 transition-colors"
       >
         <Sun className="h-4 w-4" />
       </button>

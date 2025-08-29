@@ -8,6 +8,7 @@ import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
 import { navItems } from "@/lib/common.data";
+import { CONTACT_US } from "@/lib/path-name.route";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,30 +31,36 @@ const Header = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container">
+        <div className="flex items-center justify-between h-20 lg:h-24 ">
           {/* Logo */}
           <Logo />
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems?.map((item) => (
-              <Link
-                key={item?.href}
-                href={item?.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {item?.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex items-center gap-6">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              {navItems?.map((item) => (
+                <Link
+                  id={item?.href}
+                  key={item?.href}
+                  href={item?.href}
+                  className="text-foreground text-lg md:text-xl hover:text-primary transition-colors duration-200 "
+                >
+                  {item?.label}
+                </Link>
+              ))}
+            </nav>
 
-          {/* Desktop CTA and Theme Toggle */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <ThemeToggle />
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105">
-              <Link href="#contact">Request a quote</Link>
-            </Button>
+            {/* Desktop CTA and Theme Toggle */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <ThemeToggle />
+              <Button
+                variant="outline"
+                className=" text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105"
+              >
+                <Link href="#contact">Request a quote</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
@@ -63,9 +70,13 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground"
+              className="text-foreground dark:text-white"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? (
+                <X size={24} className="dark:text-white" />
+              ) : (
+                <Menu size={24} className="dark:text-white" />
+              )}
             </Button>
           </div>
         </div>
@@ -85,7 +96,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4 pt-2">
-                <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                <button className="w-full py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90">
                   <Link
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}

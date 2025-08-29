@@ -7,7 +7,7 @@ const ProposalSection = () => {
   return (
     <div className="relative container">
       <div className="container mx-auto py-14 bg-light dark:bg-gray-800 dark:border border-gray-700 rounded-[45px] overflow-x-hidden">
-        <div className="space-y-8 pl-14">
+        <div className="space-y-8 pl-4 sm:pl-6 md:pl-14">
           <div className="space-y-4">
             <h1 className="text-2xl lg:text-3xl font-bold text-dark dark:text-light leading-tight animate-in fade-in slide-in-from-left duration-700">
               Let's make things{" "}
@@ -25,7 +25,7 @@ const ProposalSection = () => {
 
           <Button
             size="lg"
-            className="bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-white px-8 py-3 text-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 animate-in fade-in slide-in-from-left  delay-400"
+            className="bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-white px-8 py-3 text-sm whitespace-nowrap sm:text-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 animate-in fade-in slide-in-from-left  delay-400"
           >
             Get your free proposal
           </Button>

@@ -5,6 +5,8 @@ import { Send, CheckCircle2 } from "lucide-react";
 import SectionHeading from "../shared/SectionHeading";
 import ContactDecorativeSection from "./ContactDecorativeSection";
 import InputField from "../ui/InputField";
+import { CONTACT_US } from "@/lib/path-name.route";
+import Link from "next/link";
 
 type FormData = {
   type: "sayHi" | "getQuote";
@@ -60,11 +62,11 @@ const ContactForm = () => {
       name: "",
       email: "",
       message: "",
-    }); // Reset form
+    });
   };
 
   return (
-    <div className="container">
+    <Link href={"contact"} className="container">
       <div className="mb-10">
         <SectionHeading
           title={"Contact Us"}
@@ -203,7 +205,7 @@ const ContactForm = () => {
           </div>
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 

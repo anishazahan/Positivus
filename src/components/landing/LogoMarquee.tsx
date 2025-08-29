@@ -35,7 +35,7 @@ const LogoMarquee = () => {
                   src={logo.src}
                   alt={logo.alt}
                   fill
-                  className="object-contain grayscale"
+                  className="object-contain grayscale dark:grayscale-0"
                   sizes="128px"
                 />
               </div>

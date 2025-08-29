@@ -1,0 +1,1 @@
+export const CONTACT_US:string = "#contact-us"
