@@ -1,5 +1,6 @@
 import ContactForm from "@/components/landing/ContactForm";
 import HeroSection from "@/components/landing/HeroSection";
+import Services from "@/components/landing/Services";
 import ServicesSection from "@/components/landing/ServicesSection";
 import TestimonialSlider from "@/components/landing/TestimonialSlider";
 import WorkProcess from "@/components/landing/WorkProcess";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50/10 dark:bg-gray-900">
       <Header />
       {/* <HeroSection /> */}
+      <Services />
       <WorkProcess />
       <TestimonialSlider />
       <div className="my-16 lg:my-0">

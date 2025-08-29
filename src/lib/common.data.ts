@@ -1,4 +1,10 @@
-import { AccordionItem, Testimonial } from "@/types/common.type";
+import { AccordionItem, Service, Testimonial } from "@/types/common.type";
+import serviceImg1 from "../assets/images/services-img/services-1.png"
+import serviceImg2 from "../assets/images/services-img/services-2.png"
+import serviceImg3 from "../assets/images/services-img/services-3.png"
+import serviceImg4 from "../assets/images/services-img/services-4.png"
+import serviceImg5 from "../assets/images/services-img/services-5.png"
+import serviceImg6 from "../assets/images/services-img/services-6.png"
 
 export  const navItems = [
     { href: "#about", label: "About us" },
@@ -85,4 +91,81 @@ export const accordionData: AccordionItem[] = [
     content:
       "Based on performance data and market changes, we continuously refine and improve strategies to ensure long-term success and sustainable growth for your business.",
   },
+];
+
+
+
+export const services: Service[] = [
+  {
+    id: 1,
+    title: "Search engine",
+    subtitle: "optimization",
+    backgroundColor: "bg-[#F3F3F3]",
+    textColor: "text-gray-900",
+    darkBackgroundColor: "dark:bg-gray-950",
+    darkTextColor: "dark:text-gray-900",
+    icon: "search",
+    description: "Improve your website's visibility and ranking on search engines",
+    img:serviceImg1
+  },
+  {
+    id: 2,
+    title: "Pay-per-click",
+    subtitle: "advertising",
+    backgroundColor: "bg-primary",
+    textColor: "text-gray-900",
+    darkBackgroundColor: "bg-lime-400",
+    darkTextColor: "dark:text-gray-900",
+    icon: "click",
+    description: "Drive targeted traffic with strategic paid advertising campaigns",
+    img:serviceImg2
+  },
+  {
+    id: 3,
+    title: "Social Media",
+    subtitle: "Marketing",
+    backgroundColor: "bg-dark",
+    textColor: "text-white",
+    darkBackgroundColor: "dark:bg-gray-800",
+    darkTextColor: "dark:text-white",
+    icon: "social",
+    description: "Build your brand presence across social media platforms",
+     img:serviceImg3
+  },
+  {
+    id: 4,
+    title: "Email",
+    subtitle: "Marketing",
+     backgroundColor: "bg-[#F3F3F3]",
+    textColor: "text-gray-900",
+    darkBackgroundColor: "dark:bg-gray-950",
+    darkTextColor: "dark:text-gray-900",
+    icon: "email",
+    description: "Engage your audience with personalized email campaigns",
+     img:serviceImg4
+  },
+  {
+    id: 5,
+    title: "Content",
+    subtitle: "Creation",
+    backgroundColor: "bg-primary",
+    textColor: "text-gray-900",
+    darkBackgroundColor: "bg-lime-400",
+    darkTextColor: "dark:text-gray-900",
+    icon: "content",
+    description: "Create compelling content that resonates with your audience",
+     img:serviceImg5
+  },
+  {
+    id: 6,
+    title: "Analytics and",
+    subtitle: "Tracking",
+    backgroundColor:  "bg-dark",
+    textColor: "text-white",
+    darkBackgroundColor: "dark:bg-gray-800",
+    darkTextColor: "dark:text-white",
+    icon: "analytics",
+    description: "Track and analyze your marketing performance with detailed insights",
+     img:serviceImg6
+  }
 ];

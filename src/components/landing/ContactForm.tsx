@@ -77,7 +77,7 @@ const ContactForm = () => {
           <div className="flex justify-between gap-8 items-center">
             {/* Form Section */}
             <div className="w-full lg:w-[50%] order-2 lg:order-1">
-              <div className="p-8 transition-colors duration-300">
+              <div className="p-4 sm:p-8 transition-colors duration-300">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Radio Options */}
                   <div className="flex gap-6">
